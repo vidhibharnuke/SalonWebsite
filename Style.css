@@ -18,14 +18,73 @@ body {
   color: #222;
 }
 
-header {
+/* header {
   display: flex;
   flex-direction: column;
   align-items: center;
   background: #f8e1f4;
   padding: 20px 10px;
   position: relative;
+} */
+
+/* ...existing code... */
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff; /* White background, not pink */
+  padding: 20px 10px;
+  position: relative;
 }
+
+.header-left {
+  flex: 0 0 auto;
+}
+
+.header-right {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+header h1 {
+  margin: 0 0 10px 0;
+  font-size: 2rem;
+  text-align: right;
+  color: #a020f0; /* Or any color you prefer */
+  background: none; /* Ensure no background */
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  background: none;
+}
+
+/* Responsive: Stack logo and right content on small screens */
+@media (max-width: 700px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+  }
+  .header-right {
+    align-items: center;
+  }
+  header h1 {
+    text-align: center;
+  }
+  nav {
+    justify-content: center;
+  }
+}
+/* ...existing code... */
+
+
+
 
 .logo {
   width: 100px;
