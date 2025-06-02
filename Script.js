@@ -1,9 +1,10 @@
-document.getElementById('appointmentForm').addEventListener('submit', function(e) {
-  e.preventDefault();
-  alert('Appointment booked successfully!');
-});
-
-document.getElementById('contactForm').addEventListener('submit', function(e) {
-  e.preventDefault();
-  alert('Message sent successfully!');
+// Mobile nav toggle
+document.addEventListener("DOMContentLoaded", function() {
+  const nav = document.getElementById("mainNav");
+  const toggle = document.getElementById("navToggle");
+  if (toggle && nav) {
+    toggle.addEventListener("click", function() {
+      nav.classList.toggle("open");
+    });
+  }
 });

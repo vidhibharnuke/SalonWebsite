@@ -24,6 +24,7 @@ header {
   align-items: center;
   background: #f8e1f4;
   padding: 20px 10px;
+  position: relative;
 }
 
 .logo {
@@ -35,12 +36,15 @@ header {
 header h1 {
   margin: 0 0 10px 0;
   font-size: 2rem;
+  text-align: center;
 }
 
 nav {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
+  justify-content: center;
+  transition: max-height 0.3s;
 }
 
 nav a {
@@ -52,6 +56,18 @@ nav a {
 
 nav a:hover {
   color: #d2691e;
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #a020f0;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
 }
 
 .banner {
@@ -67,6 +83,7 @@ section {
   max-width: 1100px;
   margin: 0 auto;
   width: 100%;
+  box-sizing: border-box;
 }
 
 h2 {
@@ -178,14 +195,32 @@ footer {
   }
 }
 
-@media (max-width: 480px) {
-  header h1 {
-    font-size: 1.2rem;
+@media (max-width: 600px) {
+  .nav-toggle {
+    display: block;
   }
   nav {
     flex-direction: column;
-    gap: 8px;
-    align-items: center;
+    gap: 10px;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    background: #f8e1f4;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    z-index: 10;
+    border-bottom: 1px solid #a020f0;
+  }
+  nav.open {
+    max-height: 200px;
+    padding-bottom: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.2rem;
   }
   .logo {
     width: 70px;
